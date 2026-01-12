@@ -1,0 +1,30 @@
+name: VillagerFalseProphet
+version: '${project.version}'
+main: com.fikjul.falseprophet.FalseProphetPlugin
+api-version: '1.20'
+author: FikJul
+description: The False Prophet - A corrupted villager boss fight
+
+commands:
+  falseprophet:
+    description: False Prophet boss management
+    usage: /falseprophet <give|summon|help> [player] [amount]
+    aliases: [fp, prophet]
+    permission: falseprophet.admin
+    permission-message: You don't have permission to use this command
+
+permissions:
+  falseprophet.admin:
+    description: Allows managing the False Prophet boss
+    default: op
+    children:
+      falseprophet.give: true
+      falseprophet.summon: true
+  
+  falseprophet.give:
+    description: Allows giving summon items
+    default: op
+  
+  falseprophet.summon:
+    description: Allows direct summoning
+    default: op
