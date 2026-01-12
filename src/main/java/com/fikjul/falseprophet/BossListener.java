@@ -70,7 +70,7 @@ public class BossListener implements Listener {
         Location playerLoc = player.getLocation();
         
         // Check block beneath feet
-        Block blockBelow = playerLoc.subtract(0, 1, 0).getBlock();
+        Block blockBelow = playerLoc.clone().subtract(0, 1, 0).getBlock();
         if (blockBelow.getType() != Material.EMERALD_BLOCK) {
             player.sendMessage("§cYou must stand on an Emerald Block!");
             event.setCancelled(true);
@@ -117,8 +117,7 @@ public class BossListener implements Listener {
         
         // Particles
         world.spawnParticle(Particle.VILLAGER_HAPPY, spawnLoc, 50, 1.0, 1.0, 1.0);
-        world.spawnParticle(Particle.GLOW, spawnLoc, 30, 1.0, 1.0, 1.0, 
-            new Particle.DustOptions(Color.fromRGB(0, 255, 0), 2.0f));
+        world.spawnParticle(Particle.GLOW, spawnLoc, 30, 1.0, 1.0, 1.0);
         
         // Spawn boss
         bossManager.spawnBoss(spawnLoc);

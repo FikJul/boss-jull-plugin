@@ -308,7 +308,7 @@ public class BossManager {
             return false;
         }
         
-        if (boss.getState() == BossState.IMMUNE || boss.getState() == BossState.ENRAGED && !boss.isVulnerable()) {
+        if ((boss.getState() == BossState.IMMUNE || boss.getState() == BossState.ENRAGED) && !boss.isVulnerable()) {
             // Boss is immune
             attacker.sendMessage("§c§lThe False Prophet is protected by his followers!");
             attacker.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 40, 0));
