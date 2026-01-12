@@ -53,9 +53,9 @@ public class SentinelBoss {
         this.entity.setCustomName(BOSS_NAME);
         this.entity.setCustomNameVisible(true);
         this.entity.setAI(false);
-        this.entity.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MAX_HEALTH);
+        this.entity.getAttribute(Attribute.MAX_HEALTH).setBaseValue(MAX_HEALTH);
         this.entity.setHealth(MAX_HEALTH);
-        this.entity.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(1.0);
+        this.entity.getAttribute(Attribute.KNOCKBACK_RESISTANCE).setBaseValue(1.0);
         
         // Apply permanent slowness to prevent any movement
         this.entity.addPotionEffect(new PotionEffect(
