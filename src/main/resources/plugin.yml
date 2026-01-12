@@ -1,0 +1,29 @@
+name: BossJullPlugin
+version: '${project.version}'
+main: com.fikjul.bossjull.BossJullPlugin
+api-version: '1.21'
+author: FikJul
+description: Sentinel of the Ring - A custom 2-player boss fight plugin
+
+commands:
+  sentinel:
+    description: Sentinel boss management command
+    usage: /sentinel <give|summon|help> [player] [amount]
+    permission: bossjull.sentinel
+    permission-message: You don't have permission to use this command
+
+permissions:
+  bossjull.sentinel: 
+    description: Allows managing the Sentinel boss
+    default: op
+    children:
+      bossjull.sentinel.give: true
+      bossjull.sentinel.summon: true
+  
+  bossjull.sentinel.give:
+    description: Allows giving summon items
+    default: op
+  
+  bossjull.sentinel.summon:
+    description: Allows direct summoning (admin)
+    default: op
