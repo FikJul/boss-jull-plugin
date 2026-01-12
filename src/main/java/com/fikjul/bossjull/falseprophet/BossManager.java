@@ -241,9 +241,16 @@ public class BossManager {
             
             Location spawnLoc = new Location(bossLoc.getWorld(), x, bossLoc.getY(), z);
             
-            // Make sure spawn location is safe
-            spawnLoc.getBlock().setType(Material.AIR);
-            spawnLoc.clone().add(0, 1, 0).getBlock().setType(Material.AIR);
+            // Find a safe spawn location (don't destroy important blocks)
+            while (spawnLoc.getBlock().getType().isSolid() && 
+                   spawnLoc.getBlock().getType() != Material.AIR) {
+                spawnLoc.add(0, 1, 0);
+                // Prevent infinite loop if location is completely blocked
+                if (spawnLoc.getY() > bossLoc.getY() + 10) {
+                    spawnLoc = bossLoc.clone();
+                    break;
+                }
+            }
             
             // Spawn villager
             Villager villager = bossLoc.getWorld().spawn(spawnLoc, Villager.class);

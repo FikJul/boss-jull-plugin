@@ -265,7 +265,7 @@ public class FalseProphetBoss {
         loc.getWorld().playSound(loc, Sound.BLOCK_BELL_USE, 2.0f, 1.0f);
         
         // Happy villager particles
-        loc.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, loc.add(0, 1, 0), 30, 0.5, 0.5, 0.5);
+        loc.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, loc.clone().add(0, 1, 0), 30, 0.5, 0.5, 0.5);
     }
     
     /**
@@ -282,8 +282,8 @@ public class FalseProphetBoss {
         loc.getWorld().playSound(loc, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1.0f, 1.0f);
         
         // Particles
-        loc.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, loc.add(0, 1, 0), 50, 1.0, 1.0, 1.0);
-        loc.getWorld().spawnParticle(Particle.ENCHANTED_HIT, loc, 50, 1.0, 1.0, 1.0);
+        loc.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, loc.clone().add(0, 1, 0), 50, 1.0, 1.0, 1.0);
+        loc.getWorld().spawnParticle(Particle.ENCHANTED_HIT, loc.clone().add(0, 1, 0), 50, 1.0, 1.0, 1.0);
     }
     
     /**
