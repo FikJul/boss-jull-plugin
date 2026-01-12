@@ -80,7 +80,7 @@ public class BossListener implements Listener {
         // Check biome
         Biome biome = player.getLocation().getBlock().getBiome();
         if (!VALID_BIOMES.contains(biome)) {
-            player.sendMessage("§cYou must be in a Village to summon The False Prophet!");
+            player.sendMessage("§cYou must be in a valid biome (Plains, Desert, Savanna, or Taiga) to summon The False Prophet!");
             event.setCancelled(true);
             return;
         }

@@ -34,7 +34,7 @@ public class SummonItem {
             meta.setLore(Arrays.asList(LORE_LINE_1, LORE_LINE_2));
             
             // Add enchantment for glow effect
-            meta.addEnchant(Enchantment.DURABILITY, 1, true);
+            meta.addEnchant(Enchantment.UNBREAKING, 1, true);
             
             // Hide enchantment and attributes
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES);
